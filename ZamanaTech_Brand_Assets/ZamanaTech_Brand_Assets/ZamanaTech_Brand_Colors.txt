@@ -1,0 +1,10 @@
+ZamanaTech brand colors
+
+Deep Navy      HEX #101D3A   RGB 16 29 58     CMYK 100 85 40 55
+Electric Blue  HEX #087BFA   RGB 8 123 250    CMYK 85 50 0 0
+Cyan           HEX #00C8FF   RGB 0 200 255    CMYK 70 0 0 0
+Warm Orange    HEX #FF8A24   RGB 255 138 36   CMYK 0 55 90 0
+White          HEX #FFFFFF   RGB 255 255 255  CMYK 0 0 0 0
+
+Fonts: Manrope (logo, headings), Inter (body). Both free on Google Fonts.
+Zamana Technologies PLC · www.zamanatech.com · info@zamanatech.com
