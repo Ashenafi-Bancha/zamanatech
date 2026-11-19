@@ -830,3 +830,20 @@ h2 { margin-top: 16px; font-size: clamp(32px, 4.4vw, 52px); font-weight: 800; le
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .hero .reveal { animation: none; }
 }
+
+/* Wolaita Liqa alumni highlight */
+.alumni-callout {
+  margin-top: 22px; max-width: 720px; display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 20px; border-radius: 14px; font-size: 16px; line-height: 1.55; color: var(--ink-2);
+  background: linear-gradient(120deg, rgba(8, 123, 250, .08), rgba(255, 138, 36, .08));
+  border: 1px solid rgba(8, 123, 250, .2);
+}
+.alumni-callout strong { color: var(--ink); font-weight: 700; }
+.alumni-icon { flex: none; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; color: #fff; background: var(--grad); }
+.alumni-icon svg, .alumni-badge svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.member-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.alumni-badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px 5px 9px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; color: #C25E08; background: rgba(255, 138, 36, .12);
+}
+.alumni-badge svg { width: 15px; height: 15px; }
