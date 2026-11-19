@@ -847,3 +847,9 @@ h2 { margin-top: 16px; font-size: clamp(32px, 4.4vw, 52px); font-weight: 800; le
   font-size: 12px; font-weight: 700; color: #C25E08; background: rgba(255, 138, 36, .12);
 }
 .alumni-badge svg { width: 15px; height: 15px; }
+.member .edu { display: grid; gap: 6px; }
+.member .edu span { position: relative; padding-left: 16px; }
+.member .edu span::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 2px; background: var(--blue); }
+.member .edu span:first-child { color: var(--ink); font-weight: 600; }
+.member .edu span:first-child::before { background: var(--orange); }
+.member .edu::before { margin-bottom: 8px !important; }
