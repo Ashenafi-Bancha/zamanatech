@@ -1077,3 +1077,44 @@ h2 { margin-top: 16px; font-size: clamp(32px, 4.4vw, 52px); font-weight: 800; le
   .compare th, .compare td { padding: 12px 8px; }
   .compare thead th { font-size: 11px; letter-spacing: .02em; }
 }
+
+/* =========================================================
+   Floating WhatsApp button
+   ========================================================= */
+.wa-fab {
+  position: fixed; z-index: 46;
+  right: max(24px, env(safe-area-inset-right, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  display: flex; align-items: center; gap: 12px;
+  transition: transform .35s var(--ease), opacity .35s;
+}
+.wa-btn {
+  position: relative; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center;
+  background: #25D366; color: #fff; box-shadow: 0 12px 28px -8px rgba(37, 211, 102, .65), 0 4px 10px rgba(0, 0, 0, .18);
+  transition: transform .25s var(--ease), box-shadow .25s;
+}
+.wa-btn svg { width: 32px; height: 32px; fill: currentColor; position: relative; z-index: 1; }
+.wa-btn::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; background: #25D366;
+  animation: wa-ping 2.6s cubic-bezier(0, 0, .2, 1) infinite;
+}
+@keyframes wa-ping { 0% { transform: scale(1); opacity: .55; } 80%, 100% { transform: scale(1.6); opacity: 0; } }
+.wa-fab:hover .wa-btn { transform: scale(1.07); box-shadow: 0 16px 34px -8px rgba(37, 211, 102, .8), 0 4px 10px rgba(0, 0, 0, .2); }
+.wa-label {
+  padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+  font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--ink);
+  background: #fff; box-shadow: 0 10px 30px -10px rgba(16, 29, 58, .45);
+  opacity: 0; transform: translateX(10px); pointer-events: none;
+  transition: opacity .3s, transform .3s var(--ease);
+}
+.wa-fab:hover .wa-label, .wa-fab:focus-visible .wa-label, .wa-fab.show-label .wa-label { opacity: 1; transform: none; }
+html.menu-lock .wa-fab, body.is-typing .wa-fab { opacity: 0; pointer-events: none; transform: scale(.8); }
+
+@media (max-width: 900px) {
+  .wa-fab { right: max(14px, env(safe-area-inset-right, 0px)); bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+  .wa-btn { width: 56px; height: 56px; }
+  .wa-btn svg { width: 29px; height: 29px; }
+  .mobile-bar { grid-template-columns: 1fr 1.4fr; }
+  .wa-label { font-size: 13px; padding: 8px 14px; }
+}
+@media (max-width: 360px) { .mobile-bar { grid-template-columns: 1fr 1.4fr; } }
+@media (prefers-reduced-motion: reduce) { .wa-btn::before { animation: none; display: none; } }

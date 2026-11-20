@@ -45,6 +45,15 @@
     update();
   });
 
+  /* Floating WhatsApp: briefly show its label once, a few seconds after load */
+  const waFab = document.querySelector('.wa-fab');
+  if (waFab && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setTimeout(() => {
+      waFab.classList.add('show-label');
+      setTimeout(() => waFab.classList.remove('show-label'), 5000);
+    }, 4000);
+  }
+
   /* Hide the bottom contact bar while typing in the form */
   const formEl = document.getElementById('contact-form');
   formEl.addEventListener('focusin', () => document.body.classList.add('is-typing'));
