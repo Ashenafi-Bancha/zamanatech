@@ -16,7 +16,39 @@
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     menu.classList.toggle('is-open', open);
     header.classList.toggle('menu-open', open);
+    document.documentElement.classList.toggle('menu-lock', open);
   };
+
+  /* Swipeable carousels on phones, with dot indicators */
+  document.querySelectorAll('[data-carousel]').forEach((track) => {
+    const items = [...track.children];
+    const dots = document.createElement('div');
+    dots.className = 'c-dots';
+    dots.setAttribute('aria-hidden', 'true');
+    items.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.tabIndex = -1;
+      dot.addEventListener('click', () => track.scrollTo({ left: items[i].offsetLeft - items[0].offsetLeft, behavior: 'smooth' }));
+      dots.appendChild(dot);
+    });
+    track.after(dots);
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const step = items.length > 1 ? items[1].offsetLeft - items[0].offsetLeft : 1;
+      let idx = Math.round(track.scrollLeft / (step || 1));
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) idx = items.length - 1;
+      [...dots.children].forEach((d, i) => d.classList.toggle('is-active', i === idx));
+    };
+    track.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  });
+
+  /* Hide the bottom contact bar while typing in the form */
+  const formEl = document.getElementById('contact-form');
+  formEl.addEventListener('focusin', () => document.body.classList.add('is-typing'));
+  formEl.addEventListener('focusout', () => document.body.classList.remove('is-typing'));
   toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });

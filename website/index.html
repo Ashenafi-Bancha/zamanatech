@@ -17,11 +17,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261120">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,6 +43,10 @@
         <a href="#approach">Approach</a>
         <a href="#faq">FAQ</a>
         <a href="#contact" class="btn btn-primary btn-sm nav-cta">Get in touch</a>
+        <div class="menu-contact">
+          <a href="tel:+251949685555"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+251 949 685 555</a>
+          <a href="mailto:contact@zamanatech.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contact@zamanatech.com</a>
+        </div>
       </nav>
 
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
@@ -167,7 +172,7 @@
           <p class="section-sub reveal">We operate across six core technology domains, combining engineering, creativity and emerging technologies to solve real-world problems.</p>
         </header>
 
-        <div class="service-grid">
+        <div class="service-grid" data-carousel aria-label="Services">
           <article class="service-card reveal">
             <div class="s-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div>
             <h3>Software Engineering &amp; Development</h3>
@@ -342,7 +347,7 @@
           <p class="section-sub reveal">A selection of products and platforms we have built across industries, from fintech to education to cultural preservation.</p>
         </header>
 
-        <div class="work-grid">
+        <div class="work-grid" data-carousel aria-label="Projects">
           <!-- EthioFund -->
           <article class="work-card reveal">
             <div class="w-visual" aria-hidden="true">
@@ -503,7 +508,7 @@
           <p class="section-sub reveal">We are a technology and innovation company that combines engineering, creativity, research and emerging technologies to solve real-world problems.</p>
           <img src="assets/icon-color.svg" alt="" class="why-mark reveal" width="540" height="465" aria-hidden="true">
         </div>
-        <div class="why-list">
+        <div class="why-list" data-carousel aria-label="Reasons to choose us">
           <div class="why-item reveal">
             <h3>Innovation-driven</h3>
             <p>We do not just follow change, we create it. Our team explores emerging technologies to build solutions for the future.</p>
@@ -534,27 +539,27 @@
           <p class="alumni-callout reveal"><span class="alumni-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9.5 12 5l10 4.5-10 4.5L2 9.5Z"/><path d="M6 11.3V16c0 1.2 2.7 3 6 3s6-1.8 6-3v-4.7M22 9.5V15"/></svg></span><span><strong>We are former Wolaita Liqa School students</strong>, now engineers who bring the discipline, curiosity and drive we built there to every project we deliver.</span></p>
         </header>
 
-        <div class="team-grid">
+        <div class="team-grid" data-carousel aria-label="Team members">
           <article class="member reveal">
             <div class="member-top"><div class="avatar" aria-hidden="true">AB</div></div>
             <h3>Ashenafi Bancha</h3>
             <p class="role">Full-Stack Software Engineer</p>
             <p>Computer Science graduate from Addis Ababa University. Builds end-to-end digital products, from frontend interfaces to scalable backend systems.</p>
-            <div class="edu"><span>Wolaita Liqa School</span><span>Addis Ababa University · Class of 2026</span></div>
+            <div class="edu"><span>Wolaita Liqa School · Class of 2022</span><span>Addis Ababa University · Class of 2026</span></div>
           </article>
           <article class="member reveal">
             <div class="member-top"><div class="avatar" aria-hidden="true">EA</div></div>
             <h3>Elsae Arba</h3>
             <p class="role">Software Engineer · ERP Expert</p>
             <p>Computer Science graduate from Hawassa University specializing in enterprise resource planning systems and business process automation.</p>
-            <div class="edu"><span>Wolaita Liqa School</span><span>Hawassa University · Class of 2026</span></div>
+            <div class="edu"><span>Wolaita Liqa School · Class of 2022</span><span>Hawassa University · Class of 2026</span></div>
           </article>
           <article class="member reveal">
             <div class="member-top"><div class="avatar" aria-hidden="true">MC</div></div>
             <h3>Mebratu Cheka</h3>
             <p class="role">AI/ML Engineer</p>
             <p>Electrical and Computer Engineering student at Addis Ababa University specializing in artificial intelligence and machine learning systems.</p>
-            <div class="edu"><span>Wolaita Liqa School</span><span>Addis Ababa University · Computer Engineering</span></div>
+            <div class="edu"><span>Wolaita Liqa School · Class of 2022</span><span>Addis Ababa University · Computer Engineering · Class of 2027</span></div>
           </article>
         </div>
       </div>
@@ -603,7 +608,7 @@
           <p class="section-sub reveal">We measure our success by the impact we create for the people we work with.</p>
         </header>
 
-        <div class="quote-grid">
+        <div class="quote-grid" data-carousel aria-label="Client testimonials">
           <figure class="quote reveal">
             <blockquote>“Zamana Technologies delivered a stunning website that perfectly represents our college. The enrollment process is now fully online, and we have seen a significant increase in student applications.”</blockquote>
             <figcaption><span class="q-avatar" aria-hidden="true">M</span><span><strong>Marota College Admin</strong>Director, Marota Film &amp; Software College</span></figcaption>
@@ -813,6 +818,13 @@
     </div>
   </footer>
 
-  <script src="main.js" defer></script>
+  <!-- Mobile quick-contact bar -->
+  <nav class="mobile-bar" aria-label="Quick contact">
+    <a href="tel:+251949685555" class="mb-call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Call</span></a>
+    <a href="https://wa.me/251949685555" target="_blank" rel="noopener" class="mb-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+    <a href="#contact" class="mb-cta"><span>Get a quote</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
+  </nav>
+
+  <script src="main.js?v=20261120" defer></script>
 </body>
 </html>
