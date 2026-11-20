@@ -1118,3 +1118,13 @@ html.menu-lock .wa-fab, body.is-typing .wa-fab { opacity: 0; pointer-events: non
 }
 @media (max-width: 360px) { .mobile-bar { grid-template-columns: 1fr 1.4fr; } }
 @media (prefers-reduced-motion: reduce) { .wa-btn::before { animation: none; display: none; } }
+
+/* ZamanaMenu product highlight */
+.tag--product { background: rgba(8, 123, 250, .12); color: var(--blue); }
+.work-card--product { border-color: rgba(8, 123, 250, .35); box-shadow: 0 18px 40px -30px rgba(8, 123, 250, .7); }
+.work-card--product .w-visual { background: radial-gradient(110% 120% at 100% 0%, #0A5BD6 0%, #13306E 50%, var(--navy-900) 100%); }
+
+/* Testimonials: three across on desktop */
+.quote-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1080px) { .quote-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .quote-grid { grid-template-columns: 1fr; } }
