@@ -1,4 +1,6 @@
 (() => {
+  const isAm = document.documentElement.lang === 'am';
+  const t = (en, am) => (isAm ? am : en);
   document.documentElement.classList.add('js');
 
   const header = document.querySelector('.site-header');
@@ -13,7 +15,7 @@
   /* Mobile menu */
   const setMenu = (open) => {
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.setAttribute('aria-label', open ? t('Close menu', 'ማውጫውን ዝጋ') : t('Open menu', 'ማውጫውን ክፈት'));
     menu.classList.toggle('is-open', open);
     header.classList.toggle('menu-open', open);
     document.documentElement.classList.toggle('menu-lock', open);
@@ -85,7 +87,7 @@
   const copyBtn = document.getElementById('copy-msg');
   let draft = '';
   copyBtn.addEventListener('click', () => {
-    const done = () => { copyBtn.textContent = 'Copied'; setTimeout(() => (copyBtn.textContent = 'Copy message'), 2000); };
+    const done = () => { copyBtn.textContent = t('Copied', 'ተቀድቷል'); setTimeout(() => (copyBtn.textContent = t('Copy message', 'መልእክቱን ቅዳ')), 2000); };
     try {
       navigator.clipboard.writeText(draft).then(done, () => { form.querySelector('#f-msg').select(); });
     } catch (_) { form.querySelector('#f-msg').select(); }
@@ -100,20 +102,24 @@
     });
     if (!valid) {
       status.className = 'form-status is-err';
-      status.textContent = 'Please fill in your name, a valid email and a short message.';
+      status.textContent = t('Please fill in your name, a valid email and a short message.', 'እባክዎ ስምዎን፣ ትክክለኛ ኢሜይልና አጭር መልእክት ያስገቡ።');
       return;
     }
     const d = Object.fromEntries(new FormData(form));
-    const subject = `Inquiry: ${d.topic} — ${d.name}`;
+    const subject = `${t('Inquiry', 'ጥያቄ')}: ${d.topic} — ${d.name}`;
     const body = `${d.message}\n\n— ${d.name}${d.company ? `, ${d.company}` : ''}\n${d.email}`;
     draft = `To: contact@zamanatech.com\nSubject: ${subject}\n\n${body}`;
     mailLink.href = `mailto:contact@zamanatech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     followup.hidden = false;
     status.className = 'form-status is-ok';
-    status.textContent = 'Your message is ready. Send it from your email app, or copy it to contact@zamanatech.com.';
+    status.textContent = t('Your message is ready. Send it from your email app, or copy it to contact@zamanatech.com.', 'መልእክትዎ ዝግጁ ነው። በኢሜይል መተግበሪያዎ ይላኩት ወይም ገልብጠው ወደ contact@zamanatech.com ይላኩ።');
   });
   form.querySelectorAll('input, textarea').forEach((el) =>
     el.addEventListener('input', () => el.closest('.field').classList.remove('has-error')));
+
+  /* Keep the visitor on the same section when switching language */
+  const langSwitch = document.querySelector('.lang-switch');
+  if (langSwitch) langSwitch.addEventListener('click', () => { langSwitch.hash = location.hash; });
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
