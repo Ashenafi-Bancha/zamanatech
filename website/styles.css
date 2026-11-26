@@ -1289,3 +1289,33 @@ html[lang="am"] .footer-cta h2 { font-size: clamp(27px, 4vw, 48px); }
   html[lang="am"] h2 { font-size: clamp(25px, 7.2vw, 32px); }
   html[lang="am"] .mobile-bar a { font-size: 13.5px; }
 }
+
+/* =========================================================
+   Multi-page layout
+   ========================================================= */
+.site-header--solid {
+  background: rgba(10, 19, 40, .94);
+  backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom-color: var(--d-line);
+}
+.section.page-first { padding-top: calc(var(--header-h) + clamp(48px, 7vw, 88px)); }
+.page-first h1 { margin-top: 16px; font-size: clamp(34px, 5vw, 58px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; text-wrap: balance; }
+.dark .page-first h1, .page-first.dark h1 { color: #fff; }
+html[lang="am"] .page-first h1 { letter-spacing: 0; line-height: 1.28; font-size: clamp(30px, 4.4vw, 50px); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 18px; font-size: 14px; color: var(--ink-3); }
+.crumbs a { color: var(--blue); font-weight: 600; }
+.crumbs a:hover { text-decoration: underline; }
+.dark .crumbs { color: var(--d-text-2); }
+.dark .crumbs a { color: var(--cyan); }
+.section-head--center .crumbs, .faq-head .crumbs { justify-content: inherit; }
+.section-head--center .crumbs { justify-content: center; }
+.more-link { margin-top: 36px; display: flex; justify-content: center; }
+.btn-outline-dark { border-color: var(--line); color: var(--ink); background: var(--surface); }
+.btn-outline-dark:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+.dark .btn-outline-dark { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .25); }
+@media (max-width: 640px) {
+  .section.page-first { padding-top: calc(var(--header-h) + 36px); }
+  .page-first h1 { font-size: clamp(30px, 8.6vw, 38px); }
+  html[lang="am"] .page-first h1 { font-size: clamp(26px, 7.6vw, 34px); }
+  .more-link .btn { width: 100%; }
+}
