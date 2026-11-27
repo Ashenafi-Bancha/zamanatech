@@ -1293,3 +1293,21 @@ html[lang="am"] .page-first h1 { letter-spacing: 0; line-height: 1.28; font-size
 .brand-process .brand-steps { margin-top: 22px; gap: 22px; }
 .brand-process .brand-steps li + li { padding-top: 22px; border-top: 1px solid #F3E6DA; }
 @media (max-width: 640px) { .brand-process { padding: 24px 20px; border-radius: 20px; } }
+
+/* BrokerSodo marketplace mock */
+.v-market { width: 100%; max-width: 250px; display: grid; gap: 10px; }
+.vm-search { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 999px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .14); }
+.vm-search i { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--cyan); flex: none; }
+.vm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.vm-item { display: grid; gap: 6px; padding: 6px; border-radius: 10px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .1); box-shadow: 0 16px 30px -18px rgba(0, 0, 0, .6); }
+.vm-img { height: 52px; border-radius: 6px; }
+.vm-img.a { background: linear-gradient(150deg, var(--cyan), var(--blue-600)); }
+.vm-img.b { background: var(--grad-warm); }
+.vm-img.c { background: linear-gradient(150deg, #3DDC84, #128C4A); }
+.vm-item .v-line { height: 5px; }
+.vm-item em { width: 60%; height: 7px; border-radius: 4px; background: var(--orange); }
+
+/* Work grid: three across */
+.work-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1180px) { .work-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }

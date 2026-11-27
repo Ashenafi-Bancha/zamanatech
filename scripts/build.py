@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "site.html"
 WEB = ROOT / "website"
 SITE = "https://www.zamanatech.com"
-VERSION = "20261205"
+VERSION = "20261206"
 
 # ---------------------------------------------------------------------------
 # Pages
@@ -65,7 +65,7 @@ LINKS = {
     "#branding": "/branding", "#why-website": "/services#why-website", "#expertise": "/about#expertise",
 }
 NAV = ["", "about", "services", "work", "team", "approach", "faq"]
-HOME_WORK_CARDS = 4
+HOME_WORK_CARDS = 3
 JSONLD = ('<script type="application/ld+json">' + json.dumps({
     "@context": "https://schema.org", "@type": "Organization", "name": "Zamana Technologies PLC",
     "alternateName": "ZamanaTech", "url": SITE + "/", "logo": SITE + "/assets/android-chrome-512x512.png",
@@ -83,7 +83,7 @@ KEEP = {
     "ZamanaTech", "ZamanaMenu", "Marota College", "EthioFund", "Denver Black Limo", "Addis Limo",
     "Lidya Cultura", "Bushaashe Garuwa", "Damarios", "Bushaashe Garuwa Lodge", "Denver Black Limo LLC",
     "Marota Film & Software College", "Ashenafi Bancha", "Elsae Arba", "Mebratu Cheka",
-    "AB", "EA", "MC", "M", "E", "D", "QR", "Aa", "Manrope", "Inter", "bushaashegaruwa.com",
+    "AB", "EA", "MC", "M", "E", "D", "QR", "Aa", "Manrope", "Inter", "bushaashegaruwa.com", "BrokerSodo", "brokersodo.com",
     "www.zamanatech.com", "contact@zamanatech.com", "Zamana Technologies PLC", "Wolaita Sodo, Ethiopia",
     "English", "አማርኛ",
 }
