@@ -1319,3 +1319,18 @@ html[lang="am"] .page-first h1 { letter-spacing: 0; line-height: 1.28; font-size
   html[lang="am"] .page-first h1 { font-size: clamp(26px, 7.6vw, 34px); }
   .more-link .btn { width: 100%; }
 }
+
+/* Offerings: 12 tiles in a 4-column grid + "anything else" bar */
+.offer-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) { .offer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 360px) { .offer-grid { grid-template-columns: 1fr; } }
+.offer-more {
+  margin-top: 14px; display: flex; align-items: center; gap: 16px; padding: 18px 22px; border-radius: 14px;
+  background: linear-gradient(120deg, rgba(8, 123, 250, .08), rgba(0, 200, 255, .06)); border: 1px dashed rgba(8, 123, 250, .35);
+  color: var(--ink-2); font-size: 15px; transition: border-color .25s, background .25s;
+}
+.offer-more strong { color: var(--ink); font-family: var(--font-head); margin-right: 4px; }
+.offer-more .arrow { margin-left: auto; flex: none; width: 20px; height: 20px; fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s var(--ease); }
+.offer-more:hover { border-style: solid; background: linear-gradient(120deg, rgba(8, 123, 250, .12), rgba(0, 200, 255, .08)); }
+.offer-more:hover .arrow { transform: translateX(4px); }
+@media (max-width: 640px) { .offer-more { padding: 16px; gap: 12px; font-size: 14px; align-items: flex-start; } }
