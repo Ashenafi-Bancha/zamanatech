@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "site.html"
 WEB = ROOT / "website"
 SITE = "https://www.zamanatech.com"
-VERSION = "20261204"
+VERSION = "20261205"
 
 # ---------------------------------------------------------------------------
 # Pages
@@ -161,12 +161,9 @@ def build_page(slug, src, sections):
                 block = block.replace(c, "")
             block = block.replace("\n      </div>\n    </section>", '\n        <p class="more-link reveal"><a href="/work" class="btn btn-outline-dark">See all projects <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a></p>\n      </div>\n    </section>', 1)
         if slug and n == 0:
-            # the page's main section: h2 -> h1, room for the fixed header, breadcrumb
+            # the page's main section: h2 -> h1, room for the fixed header
             block = re.sub(r'<section class="section ', '<section class="section page-first ', block, count=1)
             block = re.sub(r"<h2\b([^>]*)>(.*?)</h2>", r"<h1\1>\2</h1>", block, count=1, flags=re.S)
-            crumbs = (f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a>'
-                      f'<span aria-hidden="true">/</span><span aria-current="page">{html.escape(label)}</span></nav>\n          ')
-            block = re.sub(r'(<p class="kicker)', crumbs + r"\1", block, count=1)
         body.append(block)
     page_main = main.replace("{{SECTIONS}}", "".join(body))
 
@@ -190,6 +187,15 @@ def build_page(slug, src, sections):
     page = page.replace("{{LANG_HREF}}", "/am" + ("/" + slug if slug else ""))
     page = page.replace("{{JSONLD}}", JSONLD if not slug else "")
     return page
+
+
+def crumbs_jsonld(slug, am):
+    label = PAGES[slug][0]
+    names = (TR["Home"], TR[label]) if am else ("Home", label)
+    items = [{"@type": "ListItem", "position": 1, "name": names[0], "item": url("", am)},
+             {"@type": "ListItem", "position": 2, "name": names[1], "item": url(slug, am)}]
+    data = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>"
 
 
 def split_source():
@@ -229,6 +235,9 @@ def main():
         am = am.replace('<a class="lang-switch" href="/am/am', '<a class="lang-switch" href="/am')
         am = re.sub(r'<a class="lang-switch" href="[^"]*" hreflang="am" lang="am" aria-label="[^"]*">አማርኛ</a>',
                     f'<a class="lang-switch" href="/{slug}" hreflang="en" lang="en" aria-label="Switch to English">English</a>', am)
+        if slug:  # breadcrumb for Google only, not shown on the page
+            en = en.replace("</head>", crumbs_jsonld(slug, False) + "\n</head>", 1)
+            am = am.replace("</head>", crumbs_jsonld(slug, True) + "\n</head>", 1)
         name = (slug or "index") + ".html"
         (WEB / name).write_text(en, encoding="utf-8", newline="\n")
         (WEB / "am" / name).write_text(am, encoding="utf-8", newline="\n")
