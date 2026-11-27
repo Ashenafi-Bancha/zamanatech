@@ -1311,3 +1311,28 @@ html[lang="am"] .page-first h1 { letter-spacing: 0; line-height: 1.28; font-size
 .work-grid { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 1180px) { .work-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 900px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* =========================================================
+   Client logo strip and real project thumbnails
+   ========================================================= */
+.marquee-track { gap: 14px; padding-right: 14px; }
+.marquee-track li {
+  gap: 12px; padding: 7px 18px 7px 7px; border-radius: 999px;
+  background: rgba(255, 255, 255, .96); color: var(--ink);
+  font-size: 15px; font-weight: 700; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .6);
+}
+.marquee-track li::after { display: none; }
+.marquee-track img, .c-mono { width: 40px; height: 40px; border-radius: 12px; flex: none; object-fit: cover; background: #fff; }
+.c-mono { display: grid; place-items: center; font-family: var(--font-head); font-weight: 800; font-size: 18px; color: #fff; background: var(--grad-warm); }
+@media (max-width: 640px) {
+  .marquee-track li { font-size: 14px; padding: 6px 14px 6px 6px; gap: 10px; }
+  .marquee-track img, .c-mono { width: 34px; height: 34px; border-radius: 10px; }
+}
+
+.w-visual--shot { padding: 0; min-height: 0; aspect-ratio: 16 / 10; display: block; background: var(--navy-900); }
+.w-visual--shot::before { display: none; }
+.w-visual--shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .6s var(--ease); }
+.work-card:hover .w-visual--shot img { transform: scale(1.04); }
+.work-card:hover .w-visual--shot > * { transform: none; }
+.work-card:hover .w-visual--shot img { transform: scale(1.04); }
+.w-visual:not(.w-visual--shot) { aspect-ratio: 16 / 10; min-height: 0; }

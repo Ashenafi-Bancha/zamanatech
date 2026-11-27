@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "site.html"
 WEB = ROOT / "website"
 SITE = "https://www.zamanatech.com"
-VERSION = "20261206"
+VERSION = "20261207"
 
 # ---------------------------------------------------------------------------
 # Pages
@@ -83,7 +83,7 @@ KEEP = {
     "ZamanaTech", "ZamanaMenu", "Marota College", "EthioFund", "Denver Black Limo", "Addis Limo",
     "Lidya Cultura", "Bushaashe Garuwa", "Damarios", "Bushaashe Garuwa Lodge", "Denver Black Limo LLC",
     "Marota Film & Software College", "Ashenafi Bancha", "Elsae Arba", "Mebratu Cheka",
-    "AB", "EA", "MC", "M", "E", "D", "QR", "Aa", "Manrope", "Inter", "bushaashegaruwa.com", "BrokerSodo", "brokersodo.com",
+    "AB", "EA", "MC", "M", "E", "D", "QR", "Aa", "Manrope", "Inter", "bushaashegaruwa.com", "BrokerSodo", "brokersodo.com", "Lidya Cultural Food", "Lidya Cultural Food Zone & Catering", "Dallas Café & Booth", "denverblacklimo.llc", "marota.tech", "ethiofund.com", "addislimo.com", "lidyaculturalfood.com",
     "www.zamanatech.com", "contact@zamanatech.com", "Zamana Technologies PLC", "Wolaita Sodo, Ethiopia",
     "English", "አማርኛ",
 }
