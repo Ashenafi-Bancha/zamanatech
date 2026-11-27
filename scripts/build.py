@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "site.html"
 WEB = ROOT / "website"
 SITE = "https://www.zamanatech.com"
-VERSION = "20261203"
+VERSION = "20261204"
 
 # ---------------------------------------------------------------------------
 # Pages
