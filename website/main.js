@@ -106,11 +106,11 @@
       const d = Object.fromEntries(new FormData(form));
       const subject = `${t('Inquiry', 'ጥያቄ')}: ${d.topic} — ${d.name}`;
       const body = `${d.message}\n\n— ${d.name}${d.company ? `, ${d.company}` : ''}\n${d.email}`;
-      draft = `To: contact@zamanatech.com\nSubject: ${subject}\n\n${body}`;
-      mailLink.href = `mailto:contact@zamanatech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      draft = `To: zamanatechnologies@gmail.com\nSubject: ${subject}\n\n${body}`;
+      mailLink.href = `mailto:zamanatechnologies@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       followup.hidden = false;
       status.className = 'form-status is-ok';
-      status.textContent = t('Your message is ready. Send it from your email app, or copy it to contact@zamanatech.com.', 'መልእክትዎ ዝግጁ ነው። በኢሜይል መተግበሪያዎ ይላኩት ወይም ገልብጠው ወደ contact@zamanatech.com ይላኩ።');
+      status.textContent = t('Your message is ready. Send it from your email app, or copy it to zamanatechnologies@gmail.com.', 'መልእክትዎ ዝግጁ ነው። በኢሜይል መተግበሪያዎ ይላኩት ወይም ገልብጠው ወደ zamanatechnologies@gmail.com ይላኩ።');
     });
     form.querySelectorAll('input, textarea').forEach((el) =>
       el.addEventListener('input', () => el.closest('.field').classList.remove('has-error')));

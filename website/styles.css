@@ -1336,3 +1336,4 @@ html[lang="am"] .page-first h1 { letter-spacing: 0; line-height: 1.28; font-size
 .work-card:hover .w-visual--shot > * { transform: none; }
 .work-card:hover .w-visual--shot img { transform: scale(1.04); }
 .w-visual:not(.w-visual--shot) { aspect-ratio: 16 / 10; min-height: 0; }
+.socials .soc--tiktok { --brand: #000000; border-color: rgba(255, 255, 255, .22); }

@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "site.html"
 WEB = ROOT / "website"
 SITE = "https://www.zamanatech.com"
-VERSION = "20261207"
+VERSION = "20261208"
 
 # ---------------------------------------------------------------------------
 # Pages
@@ -54,7 +54,7 @@ PAGES = {
             "Answers about ZamanaTech services, ZamanaMenu, website benefits, pricing, timelines, support after launch and how to get started.",
             ["FAQ"]),
     "contact": ("Contact", "Contact Us | ZamanaTech",
-                "Contact ZamanaTech in Wolaita Sodo, Ethiopia. Call or WhatsApp +251 949 685 555 or email contact@zamanatech.com. We reply within 24 hours.",
+                "Contact ZamanaTech in Wolaita Sodo, Ethiopia. Call or WhatsApp +251 949 685 555 or email zamanatechnologies@gmail.com. We reply within 24 hours.",
                 ["Contact"]),
 }
 
@@ -69,10 +69,10 @@ HOME_WORK_CARDS = 3
 JSONLD = ('<script type="application/ld+json">' + json.dumps({
     "@context": "https://schema.org", "@type": "Organization", "name": "Zamana Technologies PLC",
     "alternateName": "ZamanaTech", "url": SITE + "/", "logo": SITE + "/assets/android-chrome-512x512.png",
-    "email": "contact@zamanatech.com", "telephone": "+251949685555",
+    "email": "zamanatechnologies@gmail.com", "telephone": "+251949685555",
     "address": {"@type": "PostalAddress", "addressLocality": "Wolaita Sodo", "addressCountry": "ET"},
     "sameAs": ["https://www.linkedin.com/company/zamanatech", "https://www.facebook.com/zamanatech",
-               "https://www.instagram.com/zamanatech", "https://t.me/zamanatech", "https://x.com/zamanatech",
+               "https://www.instagram.com/zamanatech", "https://t.me/zamanatech", "https://www.tiktok.com/@zamanatechnology", "https://x.com/zamanatech",
                "https://github.com/zamanatech"],
 }, ensure_ascii=False) + "</script>")
 
@@ -83,8 +83,8 @@ KEEP = {
     "ZamanaTech", "ZamanaMenu", "Marota College", "EthioFund", "Denver Black Limo", "Addis Limo",
     "Lidya Cultura", "Bushaashe Garuwa", "Damarios", "Bushaashe Garuwa Lodge", "Denver Black Limo LLC",
     "Marota Film & Software College", "Ashenafi Bancha", "Elsae Arba", "Mebratu Cheka",
-    "AB", "EA", "MC", "M", "E", "D", "QR", "Aa", "Manrope", "Inter", "bushaashegaruwa.com", "BrokerSodo", "brokersodo.com", "Lidya Cultural Food", "Lidya Cultural Food Zone & Catering", "Dallas Café & Booth", "denverblacklimo.llc", "marota.tech", "ethiofund.com", "addislimo.com", "lidyaculturalfood.com",
-    "www.zamanatech.com", "contact@zamanatech.com", "Zamana Technologies PLC", "Wolaita Sodo, Ethiopia",
+    "AB", "EA", "MC", "M", "E", "D", "QR", "Aa", "Manrope", "Inter", "bushaashegaruwa.com", "BrokerSodo", "brokersodo.com", "Lidya Cultural Food", "Lidya Cultural Food Zone & Catering", "Dallas Café & Booth", "denverblacklimo.llc", "marota.tech", "ethiofund.com", "addislimo.com", "lidyaculturalfood.com", "@zamanatech", "@zamanatechnology",
+    "www.zamanatech.com", "zamanatechnologies@gmail.com", "Zamana Technologies PLC",
     "English", "አማርኛ",
 }
 WA_TEXT = {
